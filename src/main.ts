@@ -5,3 +5,8 @@ plugin.onConfig(()=>{
     ReactDOM.render(Config(),element);
     return element;
 })
+
+plugin.onLoad(()=>{
+    console.log("Plugin loaded");
+    channel
+})
