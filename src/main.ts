@@ -5,53 +5,6 @@
 plugin.onLoad(() => {
     const MAX_SEARCH_LIMIT = 8
     window["MAX_SEARCH_LIMIT"] = MAX_SEARCH_LIMIT
-    let called = false
-    function injectedOnload() {
-        if (!called) {
-            called = true;
-
-        }
-    }
-    window.addEventListener("hashchange", () => {
-        if (window.location.hash.startsWith("#/m/search")) {
-            let searchWord = ""
-            window.location.hash.split("?")[1].split("&").forEach((item) => {
-                if (item.startsWith("s=")) {
-                    searchWord = decodeURIComponent(item.split("=")[1])
-                }
-            })
-            window["cloudsearch"](searchWord).then((data) => {
-                console.log(data)
-                betterncm.utils.waitForElement(".m-plylist").then((element) => {
-                    let ul = element.getElementsByTagName("ul")[0]
-                    for (let index = 0; index < Math.min(MAX_SEARCH_LIMIT, data.total); index++) {
-                        const songDetail = data.list[index];
-                        const songId = songDetail.id
-                        let searchItemli = document.createElement("li")
-                        searchItemli.className = "itm f-cb j-item j-impress z-hascloud"
-                        searchItemli.setAttribute("data-log", JSON.stringify({
-                            events: ["_ev"],
-                            isPage: false,
-                            oid: "cell_pc_search_song",
-                            params: {
-                                s_calg: "",
-                                s_cid: songId,
-                                s_ctraceid: "",
-                                s_ctrp: "",
-                                s_ctype: "song",
-                                s_position: 1
-                            }
-                        }))
-                        searchItemli.setAttribute("data-res-id", songId)
-                        searchItemli.setAttribute("data-res-menu", "true")
-                        searchItemli.setAttribute("data-res-type", "4")
-                        searchItemli.setAttribute("data-res-from", "7")
-                        searchItemli.setAttribute("data-res-bi-event", "search")
-                    }
-                })
-            })
-        }
-    })
     window["cloudsearch"] = function (queryString: string) {
         return new Promise((resolve, reject) => {
             function injectedCallback(data) {
