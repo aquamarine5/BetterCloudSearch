@@ -6,7 +6,7 @@
     "author_links": [
         "https://github.com/aquamarine5/BetterCloudSearch"
     ],
-    "description": "",
+    "description": "BetterCloudSearch, 直接在搜索页搜索云盘音乐而不用再去云盘进行搜索",
     "betterncm_version": ">=0.2.5",
     "type": "extension",
     "preview": "preview.png",

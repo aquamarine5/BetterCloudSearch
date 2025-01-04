@@ -30,3 +30,5 @@ tsconfig.temp.json
 *.ntvs*
 *.njsproj
 *.sln
+
+plugin-info.json
