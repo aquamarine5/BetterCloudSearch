@@ -3,7 +3,8 @@
  * Copyright (c) 2025 by @aquamarine5, RC. All Rights Reversed.
  */
 plugin.onLoad(() => {
-    const MAX_SEARCH_LIMIT = 2
+    const MAX_SEARCH_LIMIT = 8
+    window["MAX_SEARCH_LIMIT"] = MAX_SEARCH_LIMIT
     let called = false
     function injectedOnload() {
         if (!called) {
@@ -70,35 +71,5 @@ plugin.onLoad(() => {
             window.ctl.player.AJ[0].MF.$i(queryData)
             window.ctl.player.AJ[0].MF.Ge("doloadlist", queryData)
         })
-    }
-    window["cloudsearchSync"] = function (queryString: string) {
-        let userid = window.ctl.cloudListManager.NI.uid;
-        let startTime = Date.now();
-        let result = null;
-        let isComplete = false;
-
-        var queryData = {
-            data: { uid: userid, offset: 0, total: true, limit: 200, keyword: queryString },
-            ext: {},
-            key: `track_cloud_search-${userid}-${queryString}`,
-            limit: 200,
-            offset: 0,
-            onload: (data) => {
-                result = data;
-                isComplete = true;
-            },
-            rkey: `r-track_cloud_search-${userid}-${queryString}-0-200`,
-        };
-
-        window.ctl.player.AJ[0].MF.$i(queryData);
-        window.ctl.player.AJ[0].MF.Ge("doloadlist", queryData);
-
-        // 使用setTimeout避免死循环
-        while (!isComplete && Date.now() - startTime < 20000) {
-            // 短暂等待
-            for (let i = 0; i < 1000000; i++) { }
-        }
-
-        return result;
     }
 })
