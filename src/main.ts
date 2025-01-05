@@ -53,4 +53,11 @@ plugin.onLoad(() => {
             window.ctl.player.AJ[0].MF.Ge("doloadlist", queryData)
         })
     }
+
+    betterncm.app.getSucceededHijacks().then((hijacks) => {
+        const isHijackSucceeded = hijacks.includes("BetterCloudSearch::")
+        if (!isHijackSucceeded) {
+            console.error("Failed to hijack BetterCloudSearch::")
+        }
+    })
 })
