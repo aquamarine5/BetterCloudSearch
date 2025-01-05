@@ -1,3 +1,7 @@
+/*
+ * @Author: aquamarine5 && aquamarine5_@outlook.com
+ * Copyright (c) 2025 by @aquamarine5, RC. All Rights Reversed.
+ */
 function RAW_w(t, e, n, i) {
     if (null == (t = t || {}).code || 200 == t.code || e.ignoreErrCode || n.ignoreErrCode) {
         var r = t;
