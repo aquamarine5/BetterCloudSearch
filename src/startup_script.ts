@@ -8,6 +8,7 @@
     }
 
     window["cloudsearch"] = function (queryString: string): Promise<any> {
+        console.log(`cloudsearch_startup(${queryString})`)
         return new Promise((resolve, reject) => {
             function injectedCallback(data) {
                 console.log(`Resolved cloudsearch(arg: ${queryString}):`, data)
