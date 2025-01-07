@@ -1,12 +1,12 @@
 {
     "manifest_version": 1,
     "name": "BetterCloudSearch",
-    "version": "1.1",
+    "version": "1.2",
     "author": "aquamarine5",
     "author_links": [
         "https://github.com/aquamarine5/BetterCloudSearch"
     ],
-    "description": "BetterCloudSearch, 直接在搜索页搜索云盘音乐而不用再去云盘进行搜索",
+    "description": "直接在搜索页搜索云盘音乐而不用再去云盘进行搜索",
     "betterncm_version": ">=0.2.5",
     "type": "extension",
     "preview": "preview.png",
