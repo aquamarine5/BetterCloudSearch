@@ -1,8 +1,7 @@
 {
   "name": "BetterCloudSearch",
-  "version": "1.0",
+  "version": "1.2",
   "description": "",
-  "main": "index.js",
   "repository": "https://github.com/aquamarine5/BetterCloudSearch",
   "author": "aquamarine5 <3168287806@qq.com>",
   "license": "GPL-3.0-or-later",
@@ -14,8 +13,8 @@
     "esbuild": "^0.17.13"
   },
   "scripts": {
-    "build:dev": "esbuild ./src/main.ts --bundle --outdir=dist --sourcemap=inline --watch --target=chrome91",
+    "build:dev": "esbuild ./src/main.ts ./src/startup_script.ts --bundle --outdir=dist --sourcemap=inline --watch --target=chrome91",
     "build": "build.cmd",
-    "analyze": "esbuild --bundle ./src/main.ts --outdir=dist --minify --analyze=verbose"
+    "analyze": "esbuild --bundle ./src/main.ts ./src/startup_script.ts --outdir=dist --minify --analyze=verbose"
   }
 }
