@@ -3,6 +3,10 @@
  * Copyright (c) 2025 by @aquamarine5, RC. All Rights Reversed.
  */
 (() => {
+
+    const DEFAULT_MAX_SEARCH_LIMIT = 5
+    const MAX_SEARCH_LIMIT_CONFIG_KEY = "better-cloud-search_max-search-limit"
+
     window["loadmaxlimit"] = function (): number {
         return parseInt(localStorage.getItem(MAX_SEARCH_LIMIT_CONFIG_KEY)) || DEFAULT_MAX_SEARCH_LIMIT
     }
