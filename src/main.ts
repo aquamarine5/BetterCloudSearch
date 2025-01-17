@@ -40,7 +40,7 @@ plugin.onLoad(() => {
                 console.log(`Resolved cloudsearch(arg: ${queryString}):`, data)
                 resolve(data)
             }
-            let userid = window.ctl.cloudListManager.NI.uid
+            let userid = localCache.Du("host.profile.userId")
             let loadmaxlimitnumber = window["loadmaxlimit"]()
             var queryData = {
                 data: { uid: userid, offset: 0, total: true, limit: loadmaxlimitnumber, keyword: queryString },
