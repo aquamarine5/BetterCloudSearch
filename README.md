@@ -4,6 +4,11 @@
 
 ![readme](preview.png)
 
+## 作者其他的BetterNCM插件
+
+- [BetterListenCount](https://github.com/aquamarine5/BetterListenCount) 批量查询歌单内歌曲播放次数
+- [BetterCloudRematcher](https://github.com/aquamarine5/BetterCloudRematcher) 右键无版权音乐自动匹配云盘内歌曲文件并重绑定
+
 ## 功能
 
 - 默认搜索歌曲时遇到无版权音乐并不会出现在搜索结果内。
